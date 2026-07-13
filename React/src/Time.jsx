@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from 'react'
 
 const Time = () => {
-    const [first, setfirst] = useState(new Date().toLocaleTimeString())
+    const [time, settime] = useState(new Date().toLocaleTimeString())
     useEffect(() => {
-      const time = setInterval(()=>{
-      setfirst( new Date().toLocaleTimeString())
+      const ti = setInterval(()=>{
+      settime ( new Date().toLocaleTimeString())
       },1000)
     
       return () => {
-        clearInterval(time)
+        clearInterval(ti)
       }
     }, [])
     
     
   return (
-    <div
-    className='flex justify-center items-center h-screen bg-gray-700 
-    font-bold
-    text-5xl text-white w-full '>
-        {first}
-    </div>
+    <div>{time}</div>
   )
 }
 
